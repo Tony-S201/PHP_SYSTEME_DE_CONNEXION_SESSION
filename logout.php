@@ -1,4 +1,5 @@
 <?php 
+// Déconnecte la session et redirige vers la page d'accueil
 session_start();
 unset($_SESSION['connecte']);
-header('Location: login.php');
+header('Location: index.php');

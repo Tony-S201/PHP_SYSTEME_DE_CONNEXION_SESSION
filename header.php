@@ -1,3 +1,9 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+} 
+require_once 'auth.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +16,14 @@
 <body>
     
 <div class="headerSection">Bienvenue</div>
+<div>
+    <?php if(!est_connecte()): ?>
+        <a href="login.php">Connexion</a>
+    <?php endif ?>
+</div>
 <div class="disconnect">
     <!-- Teste si l'utilisateur est connecté, pour afficher le lien de déconnection -->
-
+    <?php if (est_connecte()): ?>
+        <a href="logout.php">Se déconnecter</a>
+    <?php endif ?>
 </div>

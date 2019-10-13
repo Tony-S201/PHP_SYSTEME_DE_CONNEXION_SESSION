@@ -1,5 +1,5 @@
 <?php 
 
 require 'header.php';
-require 'dashboard.php';
+require 'home.php';
 require 'footer.php';

@@ -4,7 +4,7 @@ $erreur = null;
 
 // Vérifie les données du formulaire (présence et concordance)
 if (!empty($_POST['pseudo']) && !empty($_POST['motdepasse'])) {
-    if($_POST['pseudo'] === 'Tony' && $_POST['motdepasse'] === 'abc123') {
+    if($_POST['pseudo'] === 'sarah' && $_POST['motdepasse'] === 'hérisson') {
         // On connecte l'utilisateur
         session_start();
         $_SESSION['connecte'] = 1;
@@ -15,13 +15,13 @@ if (!empty($_POST['pseudo']) && !empty($_POST['motdepasse'])) {
     }
 }
 
-require 'auth.php';
+require_once 'auth.php';
 if(est_connecte()) {
     header('Location: dashboard.php');
     exit(); 
 }
 
-require 'header.php';
+require_once 'header.php';
 ?>
 
 <!-- Affichage de l'erreur si mauvais identifiants -->
